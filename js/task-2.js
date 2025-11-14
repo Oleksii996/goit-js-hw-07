@@ -35,14 +35,22 @@ const images = [
   },
 ];
 
-const gallery = document.querySelector('.gallery'); //пошук галереї
-console.log(gallery); //перевірка в консолі
+const gallery = document.querySelector('.gallery');
+// тут я повертаю цю галерею для подальшої роботи саме зі списком цим
 
-const galleryItems = images
-  .map(({ url, alt }) => {
-    return `<li><img src="${url}" alt="${alt}"></li>`;
-  })
-  .join('');
+// Створюю нові html елементи
+const items = images.map(({ url, alt }) => {
+  const li = document.createElement('li'); // створюю <li>
+  const img = document.createElement('img'); // створюю <img>
 
-gallery.insertAdjacentHTML('beforeend', galleryItems);
-// Метод insertAdjacentHTML() — це сучасний метод для додавання рядка з HTML-тегами перед, після або всередину елемента.
+  img.src = url; // для src
+  img.alt = alt; // для alt
+
+  li.append(img); // вкладаюю img всередину li (треба перечитати конспект)
+
+  return li; // повертаюю готовий li
+});
+
+//
+gallery.append(...items); //...метод взяти все у масиві
+console.log(gallery); //для консолі
