@@ -5,13 +5,13 @@ const input = document.querySelector('#name-input'); // беремо в робо
 const output = document.querySelector('#name-output'); // беремо в роботу спан-output
 
 input.addEventListener('input', () => {
-  const cleanedValue = input.value.trim(); //зміна для порожнього поля, трім метод для пробілів. Прибирає лише з початку та кінця
+  const cleanedString = input.value.trim(); //зміна для порожнього поля, трім метод для пробілів. Прибирає лише з початку та кінця
 
-  if (cleanedValue === '') {
+  if (cleanedString === '') {
     // команда для порожнього рядка, плюс пробіли
     output.textContent = 'Anonymous';
   } else {
     // тут будь яке інше значення переводить цей рядок в output
-    output.textContent = cleanedValue;
+    output.textContent = cleanedString;
   }
 });
