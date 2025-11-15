@@ -23,4 +23,6 @@ function onFormSubmit(event) {
       email: email.value.trim(),
       password: password.value.trim(),
     }); // просто вивід у консоль результату. Обєкт мейл та пароль
+
+  event.currentTarget.reset(); // команда для очищення полів
 }
